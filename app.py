@@ -3,7 +3,6 @@ import pickle
 import numpy as np
 import re
 
-
 #Use of IP or not in domain
 def having_ip_address(url):
     match = re.search(
@@ -187,14 +186,14 @@ def Predict():
         res="SAFE"
         return render_template('Homepage.html',pred=res)
     elif int(pred[0]) == 1.0:
-        res="DEFACEMENT"
+        res="PHISHING"
         return render_template('Homepage.html',pred=res)
     elif int(pred[0]) == 2.0:
         res="PHISHING"
         return render_template('Homepage.html',pred=res)
 
     elif int(pred[0]) == 3.0:
-        res="MALWARE"
+        res="PHISHING"
         return render_template('Homepage.html',pred=res)
 if __name__ == '__main__':
   app.run()
